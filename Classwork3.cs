@@ -13,12 +13,16 @@ namespace ConsoleApp27
         {
            Console.WriteLine("Введите стороны прямоугольника через пробел");
            string x = Console.ReadLine();
+           while (x.Contains("  "))
+           {
+               x = x.Replace("  ", " ");
+           }
            x = x.Trim();
            string[] rez;
            rez = x.Split(' ');
-           int x4 = x.Length;
            int x1;
            int x2;
+           int x4 = x.Length;
            bool p = int.TryParse(rez[0], out x1);
            bool p1 = int.TryParse(rez[1], out x2);
            int x3 = x1 * x2;
